@@ -20,7 +20,7 @@ jobs:
 
       # 3. Upload an artifact (the hello.txt file as example)
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: hello-file
           path: hello.txt
