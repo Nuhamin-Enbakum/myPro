@@ -1,0 +1,24 @@
+name: Scheduled Task Example
+
+# 🔹 Trigger: run automatically on a schedule (cron job)
+on:
+  schedule:
+    # Runs every day at 12:00 UTC
+    - cron: "0 12 * * *"
+
+jobs:
+  daily-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Run a simple command
+      - name: Print message
+        run: echo "Scheduled task running at noon UTC 🚀"
+
+      # 3. Run a small script (example: list files in repo)
+      - name: List files
+        run: ls -la
