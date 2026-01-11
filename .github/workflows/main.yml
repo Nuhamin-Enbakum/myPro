@@ -1,0 +1,26 @@
+name: CI Example Workflow
+
+# 🔹 Trigger on every push and pull request
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest   # 🔹 Run on Ubuntu
+
+    steps:
+      # 1. Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Run a simple command
+      - name: Print message
+        run: echo "CI Running 🚀"
+
+      # 3. Upload an artifact (the hello.txt file as example)
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: hello-file
+          path: hello.txt
